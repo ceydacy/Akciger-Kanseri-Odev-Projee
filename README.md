@@ -1,38 +1,46 @@
-🫁 Akciğer Kanseri Tahmini (Lung Cancer Prediction)
+# 🫁 Akciğer Kanseri Tahmini (Lung Cancer Prediction)
+
 Bu proje, klinik ve demografik verileri kullanarak bir bireyde akciğer kanseri olup olmadığını tahmin etmek amacıyla geliştirilmiş bir makine öğrenmesi çalışmasıdır. Proje kapsamında farklı sınıflandırma algoritmaları eğitilmiş ve performansları karşılaştırılmıştır.
 
-📊 Veri Seti Hakkında
-Kullanılan veri seti, 309 farklı bireyden toplanan 16 klinik parametreyi içermektedir. Veri setindeki temel özellikler şunlardır:
+## Veri Seti Analizi (EDA)
+Kullanılan veri seti, 309 bireye ait 16 farklı klinik parametre içermektedir.
+*   **Klinik Bulgular:** Sigara kullanımı, anksiyete, kronik hastalıklar, hırıltılı solunum, alkol kullanımı, öksürük, nefes darlığı, yutma güçlüğü ve göğüs ağrısı.
+*   **İstatistiksel Özellikler:** Veri setindeki yaş ortalaması **62.6**'dır ve kanserli vaka yoğunluğu ("YES") yüksektir.
 
-Demografik Bilgiler: Yaş, Cinsiyet.
+## Kullanılan Teknolojiler
+*   **Dil:** Python
+*   **Kütüphaneler:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+*   **Platform:** Google Colab / Jupyter Notebook
 
-Klinik Parametreler: Sigara kullanımı, parmaklarda sararma, anksiyete, akran baskısı, kronik hastalıklar, yorgunluk, alerji, hırıltılı nefes alma, alkol tüketimi, öksürük, nefes darlığı, yutma güçlüğü, göğüs ağrısı.
+## Makine Öğrenmesi Modelleri
+Projede aşağıdaki sınıflandırma modelleri uygulanmış ve karşılaştırılmıştır:
+1. **Random Forest Classifier**
+2. **K-Nearest Neighbors (KNN)**
+3. **Logistic Regression**
+4. **Decision Tree Classifier**
 
-Hedef Değişken (Target): LUNG_CANCER (Akciğer Kanseri Durumu - Evet/Hayır)
+## Performans Sonuçları
+Veri seti **%80 eğitim** ve **%20 test** olarak bölünerek modeller objektif bir şekilde değerlendirilmiştir. Elde edilen temel bulgular şöyledir:
 
-🛠️ Kullanılan Teknolojiler
-Python (Dil)
+*   **En Başarılı Model:** Random Forest ve Decision Tree modelleri **%96.77** doğruluk (Accuracy) oranıyla en yüksek performansı göstermiştir.
+*   **Sağlık Sektörü İçin Kritik Metrik (Recall):** Kanser vakalarını kaçırmama oranı (Recall), Random Forest modelinde **%98.33** ile en güvenilir seviyededir.
+*   **Hata Analizi:** Random Forest modeli, 62 test verisinden sadece 2 tanesinde hatalı tahmin yapmıştır.
 
-Pandas & NumPy (Veri Analizi)
+## Model Açıklanabilirliği (Feature Importance)
+Modelin karar verme sürecinde en çok hangi semptomlara önem verdiği analiz edilmiştir. Bu analiz, teşhis sürecinde hangi klinik bulguların (örneğin; nefes darlığı veya hırıltılı solunum) model tahmini için daha belirleyici olduğunu bilimsel olarak ortaya koymaktadır.
 
-Matplotlib & Seaborn (Veri Görselleştirme)
+## Kurulum ve Çalıştırma
+Projeyi yerel ortamınızda çalıştırmak için:
+1. Bu depoyu klonlayın: `git clone https://github.com/ceydacy/Akciger-Kanseri-Odev-Projee.git`
+2. Gerekli kütüphaneleri yükleyin: `pip install pandas scikit-learn matplotlib seaborn`
+3. `.ipynb` dosyasını Jupyter Notebook veya Google Colab ile açarak tüm hücreleri çalıştırın.
 
-Scikit-learn (Makine Öğrenmesi Modelleri ve Metrikler)
+---
+## Proje Ekibi
+Bu proje aşağıdaki ekip üyeleri tarafından ortaklaşa geliştirilmiştir:
 
-🧠 Makine Öğrenmesi Modelleri
-Proje boyunca aşağıdaki modeller eğitilmiş ve test edilmiştir:
-
-Random Forest Classifier (%96.77 Doğruluk) - En Başarılı Model
-
-K-Nearest Neighbors (KNN) (%95.16 Doğruluk)
-
-Logistic Regression (%95.16 Doğruluk)
-
-Decision Tree Classifier (%96.77 Doğruluk)
-
-📈 Model Performansı ve Bulgular
-Random Forest, hem doğruluk hem de Duyarlılık (Recall: %98.33) oranları ile sağlık verileri için en güvenilir sonuçları vermiştir.
-
-Lojistik Regresyon, doğrusal ilişkileri anlamada ve küçük veri setlerinde oldukça stabil sonuçlar sergilemiştir.
-
-Veri setindeki sınıflar arasında dengesizlik (kanser vakalarının yoğunluğu) saptanmış, bu durumun model eğitimine etkisi analiz edilmiştir.
+*   **[Ceyda Çay]**
+*   **[Sefa İçbudak]** 
+*   **[Ali Sadi Akkuş]** 
+---
+*Bu çalışma, Makine Öğrenmesi dersi kapsamında hazırlanan ortak bir projedir.*
